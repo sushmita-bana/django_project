@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>update</title>
+        <style>
+            #update{
+                background-color: grey;
+                padding:5px;
+
+            }
+            #body{
+                margin-top: 20px;   
+            }
+        </style>
+    </head>
+    <body>
+        <div id="update">
+            <h1 style="text-align:center;font-weight:bolder">UPDATE</h1>
+        </div>
+        <div id="body">
+            <form action="" method="POST">
+            {%csrf_token%}
+            Name:<br><br> <input type="text" name="name" id="name"size="50"><br><br>
+            WillingDate:<br><br><input type="date" name="willing_date" id="willing_date"size="50" value="willing_date"><br><br>
+            <a href="{% url 'walkin' %}"><button>Update</button></a>
+            </form>
+        </div>
+    </body>
+</html>

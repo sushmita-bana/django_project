@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Joining Page</title>
+        <style>
+            #counselling{
+                background-color: grey;
+                padding:5px;
+
+            }
+            #body{
+                padding: 20px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="counselling">
+            <h1 style="text-align:center;font-weight:bolder">JOINING PAGE</h1>
+        </div>
+        <div id="body">
+            <form action="" method="POST">
+                {%csrf_token%}
+                Name:<br><br> <input type="text" name="name" id="name"size="50"><br><br>
+                Course:<br><br>
+                <select name="course" id="course"width="50px">
+                    <option value="none"></option>
+                    <option value="java">Java</option>
+                    <option value="fullstack">Full Stack</option>
+                    <option value="python">Python</option>
+                </select><br><br>
+                DateOfJoining:<br><br><input type="date" name="date_join" id="date_join"size="50" value="date"><br><br>
+                DateOfCompletion:<br><br><input type="date" name="date_complete" id="date_complete"size="50" value="date"><br><br>
+                <!--CourseFee:<br><br> <input type="text" name="fee" id="fee"size="50"><br><br> -->
+                Instructor:<br><br> <input type="text" name="instructor" id="instructor"size="50"><br><br>
+                <!--AadharNo:<br><br> <input type="text" name="aadhar" id="aadhar"size="50"><br><br>-->
+                Mobile:<br><br> <input type="text" name="mobile" id="mobile"size="50"><br><br>
+                Email: <br><br><input type="email" name="email" id="email"size="50"><br><br>
+                Remarks:<br><br><input type="text" name="remarks" id="remarks"size="50"><br><br> 
+                <input type ="submit">
+            </form>
+        </div>
+    </body>
+</html>

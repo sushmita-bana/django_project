@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Students</title>
+        <style>
+            #current_status{
+                background-color: grey;
+                padding:5px;
+
+            }
+            #body{
+                margin-top: 20px;
+                
+            }
+            table,th,td{
+                border: 1px solid black;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="students">
+            <h1 style="text-align:center;font-weight:bolder">STUDENTS</h1>
+        </div>
+        <div id="body">
+            {%csrf_token%}
+            <h1>COMPLETED-STUDENTS</h1>
+            <table width="100%">
+               <tr>
+                <td>id</td>
+                <td>Name</td>
+                <td>Course</td>
+                <td>DateOfJoining</td>
+                <td>DateOfCompletion</td>
+                <td>Instructor</td>
+                <td>Email</td>
+                <td>Mobile</td>
+                <td>Status</td>
+               </tr>
+               {% for ele in data%} 
+               <tr>
+                <td>{{ele.id}}</td>
+                <td>{{ele.Name}}</td>
+                <td>{{ele.Course}}</td>
+                <td>{{ele.DateOfJoining}}</td>
+                <td>{{ele.DateOfCompletion}}</td>
+                <td>{{ele.Instructor}}</td>
+                <td>{{ele.Email}}</td>
+                <td>{{ele.Mobile}}</td>
+                <td>completed</td>
+               </tr>
+               {%endfor%}
+
+            </table><br><br>
+            <h1>INPROCESS-STUDENTS</h1>
+            <table width="100%">
+               <tr>
+                
+                <td>Name</td>
+                <td>Course</td>
+                <td>DateOfJoining</td>
+                <td>DateOfCompletion</td>
+                <td>Instructor</td>
+                <td>Email</td>
+                <td>Mobile</td>
+                <td>Status</td>
+               </tr>
+            </table><br><br>
+            <h1>DISCONTINUED-STUDENTS</h1>
+            <table width="100%">
+                <tr>
+                    
+                    <td>Name</td>
+                    <td>Course</td>
+                    <td>DateOfJoining</td>
+                    <td>DateOfCompletion</td>
+                    <td>Instructor</td>
+                    <td>Email</td>
+                    <td>Mobile</td>
+                    <td>Status</td>
+                   </tr>
+                  
+            </table>
+
+        </div>
+    </body>
+</html>

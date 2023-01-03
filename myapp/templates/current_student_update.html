@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>current student update</title>
+        <style>
+            #update{
+                background-color: grey;
+                padding:5px;
+
+            }
+            #body{
+                margin-top: 20px;   
+            }
+        </style>
+    </head>
+    <body>
+        <div id="update">
+            <h1 style="text-align:center;font-weight:bolder">UPDATE</h1>
+        </div>
+        <div id="body">
+            <form action="" method="POST">
+            {%csrf_token%}
+            Name:<br><br> <input type="text" name="name" id="name"size="50"><br><br>
+            DateOfCompletion:<br><br><input type="date" name="date_complete" id="willing_date"size="50" value="willing_date"><br><br>
+            <a href="{% url 'current_students' %}"><button>Update</button></a>
+            </form>
+        </div>
+    </body>
+</html>

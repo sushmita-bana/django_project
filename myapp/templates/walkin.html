@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Walkins</title>
+        <style>
+            #walkins{
+                background-color: grey;
+                padding:5px;
+
+            }
+            #body{
+                margin-top: 20px;
+                
+            }
+            table,th,td{
+                border: 1px solid black;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="walkins">
+            <h1 style="text-align:center;font-weight:bolder">WALKINS</h1>
+        </div>
+        <div id="body">
+            {%csrf_token%}
+            <table width="100%">
+               
+               <tr>
+                <td>Name</td>
+                <td>Mobile</td>
+                <td>Email</td>
+                <td>Course</td>
+                <td>Source</td>
+                <td>LeadStatus</td>
+                <td>DemoDate</td>
+                <td>Counsler</td>
+                <td>Remarks</td>
+
+               </tr>
+               {% for ele in data%} 
+                <tr>
+                    <td>{{ele.Name}}</td>
+                    <td>{{ele.Mobile}}</td>
+                    <td>{{ele.Email}}</td>
+                    <td>{{ele.Course}}</td>
+                    <td>{{ele.Source}}</td>
+                    <td>{{ele.LeadStatus}}</td>
+                    <td>{{ele.DemoDate}}</td>
+                    <td>{{ele.Counsler}}</td>
+                    <td>{{ele.Remarks}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+            <br><br>
+            <a href="{% url 'register'%}"><button>BACK</button></a>
+        </div>
+    </body>
+</html>

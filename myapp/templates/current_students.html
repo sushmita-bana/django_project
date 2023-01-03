@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Current Status</title>
+        <style>
+            #current_status{
+                background-color: grey;
+                padding:5px;
+
+            }
+            #body{
+                margin-top: 20px;
+                
+            }
+            table,th,td{
+                border: 1px solid black;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="current_status">
+            <h1 style="text-align:center;font-weight:bolder">CURRENT LIST</h1>
+        </div>
+        <div id="body">
+            {%csrf_token%}
+            <table width="100%">
+               
+               <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Course</td>
+                <td>DateOfJoining</td>
+                <td>DateOfCompletion</td>
+                <!--<td>CourseFee</td>-->
+                <td>Instructor</td>
+                <!--<td>AadharNo</td>-->
+                <td>Email</td>
+                <td>Mobile</td>
+                <td>Remarks</td>
+                <td>Complete</td>
+                <td>Delay</td>
+                <td>Dead</td>
+                
+               </tr>
+                {% for ele in data%} 
+                    <tr>
+                        <td>{{ele.id}}</td>
+                        <td>{{ele.Name}}</td>
+                        <td>{{ele.Course}}</td>
+                        <td>{{ele.DateOfJoining}}</td>
+                        <td>{{ele.DateOfCompletion}}</td>
+                        <!--<td>{{ele.CourseFee}}</td>-->
+                        <td>{{ele.Instructor}}</td>
+                        <!--<td>{{ele.AadharNo}}</td>-->
+                        <td>{{ele.Email}}</td>
+                        <td>{{ele.Mobile}}</td>
+                        <td>{{ele.Remarks}}</td>
+                        <td><a href ="{% url 'students' id=ele.id %}"><button>Complete</button></a></td>
+                        <td><a href="{% url 'current_student_update'%}"><button>Delay</button></a></td>
+                        <!--<td><a href="{% url 'discontinue_students' id=ele.id%}"><button>Dead</button></a></td>-->
+                        
+                    </tr>
+                    
+                {%endfor%}
+            </table><br><br>
+           
+
+    </body>
+</html>

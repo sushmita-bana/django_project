@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>Counselling List</title>
+        <style>
+            #counselling_list{
+                background-color: grey;
+                padding:5px;
+
+            }
+            #body{
+                margin-top: 20px;
+                
+            }
+            table,th,td{
+                border: 1px solid black;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="counselling_list">
+            <h1 style="text-align:center;font-weight:bolder">COUNSELLING LIST</h1>
+        </div>
+        <div id="body">
+            {%csrf_token%}
+            <table width="100%">
+               
+               <tr>
+                <td>Name</td>
+                <td>Mobile</td>
+                <td>Email</td>
+                <td>Course</td>
+                <td>Source</td>
+                <td>LeadStatus</td>
+                <td>DemoDate</td>
+                <td>Counsler</td>
+                <td>Remarks</td>
+                <td>Join</td>
+                <td>Willing</td>
+                <td>Dead</td>
+               </tr>
+                {% for ele in data%} 
+                    <tr>
+                        <td >{{ele.Name}}</td>
+                        <td >{{ele.Mobile}}</td>
+                        <td >{{ele.Email}}</td>
+                        <td>{{ele.Course}}</td>
+                        <td>{{ele.Source}}</td>
+                        <td>{{ele.LeadStatus}}</td>
+                        <td>{{ele.DemoDate}}</td>
+                        <td>{{ele.Counsler}}</td>
+                        <td>{{ele.Remarks}}</td>
+                        <td> <a href="{% url 'joining' %}"><button>Join</button></a></td>
+                        <td> <a href="{% url 'update' %}"><button>Willing</button></a></td>
+                        <td><a href="{% url 'delete' id=ele.id %}"><button>Dead</button></a></td>
+                        
+                    </tr>
+                    
+                {%endfor%}
+            </table><br><br>
+            <button style="margin-right:850px">Back</button>
+            <button>Next</button>
+
+    </body>
+</html>
